@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.3);
+  }
+  
+  .animate-pulse-fast {
+    animation: pulse 0.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Phone frame styling */
+.phone-frame {
+  @apply relative mx-auto bg-black rounded-[3rem] p-3 shadow-2xl;
+  width: 393px;
+  max-width: 100%;
+}
+
+.phone-notch {
+  @apply absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-20;
+}
+
+.phone-screen {
+  @apply relative bg-bg-primary rounded-[2.5rem] overflow-hidden;
+  height: 852px;
+  max-height: calc(100vh - 40px);
+}
+
+.phone-home-indicator {
+  @apply absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-600 rounded-full z-20;
+}
+
+/* Number increment animation */
+.number-tick {
+  @apply inline-block;
+  animation: numberTick 0.1s ease-out;
+}
+
+@keyframes numberTick {
+  0% { transform: scale(1.1); color: #e94560; }
+  100% { transform: scale(1); color: inherit; }
+}
