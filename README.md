@@ -1,0 +1,145 @@
+# Infinity Forge
+
+A demonstration faux mobile application designed to showcase **the most addictive game mechanics** used in modern applications.
+
+> ⚠️ **WARNING**: This project is intentionally designed to be addictive. It exists to demonstrate a problem, not to be used as a genuine entertainment product.
+
+---
+
+## The Point of This Repository
+
+This project exists to demonstrate the **predatory design patterns** embedded in everyday digital products—from mobile games to social media, dating apps to productivity tools.
+
+### The Dark Reality
+
+Behind every "swipe" and "like" lies a sophisticated machinery of psychological manipulation:
+
+- **Children** are developing gambling-like behaviors through loot boxes before they can legally enter a casino
+- **Teenagers** experience anxiety and depression correlating directly with social media engagement metrics
+- **Adults** lose hours to infinite scroll feeds designed to exploit their FOMO and need for validation
+- **Relationships** are gamified into swipe-based transactions, reducing human connection to dopamine hits
+- **Workers** are monitored by gamified productivity systems that turn employment into a Skinner box
+
+These mechanics don't discriminate by age, culture, or socioeconomic status. They target fundamental human psychological needs:
+- The need for social validation
+- The fear of missing out
+- The illusion of control and agency
+- The hope for variable rewards
+
+**This repository is a mirror.** It reflects what the tech industry has normalized—addiction as a business model.
+
+---
+
+## Addictive Mechanics Implemented
+
+### 1. Variable Ratio Reinforcement (Gambling Mechanics)
+Mystery crates spawn every 2-5 minutes with the following drop rates:
+- Common (60%) - small ore boost
+- Uncommon (25%) - moderate ore boost  
+- Rare (10%) - large ore boost
+- Epic (4%) - massive ore boost
+- Legendary (1%) - huge ore boost
+
+**Why it works**: Unpredictable rewards create stronger behavioral conditioning than predictable ones. This is the same mechanism that makes slot machines addictive.
+
+### 2. Near-Miss Teases
+- 30% chance crates show "ALMOST LEGENDARY!" glow before revealing Epic rarity
+- 95% progress bars on locked content that never quite fills
+- Teasers for "next zone" requirements just out of reach
+
+**Why it works**: Near-misses trigger the same dopamine response as actual wins, encouraging continued play despite losses.
+
+### 3. Micro-Rewards & Feedback Loops
+- Tap button provides instant ore with satisfying haptic-like animation
+- Numbers "tick" when resources increase
+- 12 achievement badges with pop-up notifications
+- Daily login calendar with escalating rewards
+
+**Why it works**: Frequent small rewards maintain engagement during periods of low activity.
+
+### 4. Phantom Social Pressure
+- Simulated leaderboard with 10 AI players
+- Player always ranked #11, just below top 10
+- Dynamic gap to next rank shown in real-time
+- FOMO messaging: "You're catching up!" / "Don't fall behind!"
+
+**Why it works**: Social comparison drives engagement. Even fake competition triggers our innate desire for status.
+
+### 5. Illusion of Control
+- Building upgrade paths with "meaningful" choices
+- "Optimal purchase" indicator (green arrow on best value)
+- Tap mechanic giving sense of active participation
+- Offline progress showing "your factories kept working"
+
+**Why it works**: When players feel their actions matter, they invest more time and emotional energy.
+
+### 6. Progress & Investment Hooks
+- 8 tiers of buildings with exponential costs
+- Daily streak tracking with flame icon animation
+- Offline progress calculation (50% efficiency to encourage returning)
+- Resource accumulation continues even when app is "closed"
+
+**Why it works**: Sunk cost fallacy and loss aversion make users reluctant to stop after investing time.
+
+### 7. Infinite Progression
+- Procedural building generation beyond tier 8
+- Costs and production scale infinitely
+- No defined end state or victory condition
+
+**Why it works**: Without a clear stopping point, users continue indefinitely.
+
+---
+
+## Technical Stack
+
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **State Management**: Zustand with persistence
+- **Animations**: Framer Motion
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+
+---
+
+## Running Locally
+
+```bash
+npm install
+npm run dev
+```
+
+The application will be available at `http://localhost:5173/`
+
+---
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── buildings/       # Building grid and cards
+│   ├── notifications/   # Achievement popups, offline modal
+│   ├── resources/       # Resource bar with tap button
+│   └── rewards/         # Loot crates, daily rewards, leaderboard
+├── hooks/               # Game tick and interval management
+├── stores/              # Zustand stores (game, rewards, player)
+└── types/               # TypeScript interfaces and utilities
+```
+
+---
+
+## A Note to Developers
+
+If you build products that use these patterns:
+- Ask yourself who benefits from infinite engagement
+- Consider the long-term wellbeing of your users
+- Question metrics that optimize for time spent rather than value provided
+- Remember that "sticky" features often exploit psychological vulnerabilities
+
+**Technology should serve humans, not harvest their attention.**
+
+---
+
+## License
+
+This project is provided for educational and research purposes. The addictive patterns demonstrated here should not be replicated in consumer products without serious ethical consideration.
