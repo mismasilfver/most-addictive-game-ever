@@ -41,7 +41,8 @@ These mechanics don't discriminate by age, culture, or socioeconomic status. The
 6. **Illusion of Control** - Building upgrades, "optimal purchase" indicator
 7. **Infinite Progression** - Procedural buildings beyond tier 8
 8. **Prestige/Reset System** - Sacrifice progress for permanent bonuses (+10% production per ascension)
-9. **Surveillance & Behavioral Profiling** - Faux telemetry system with player scoring, whale identification, and live dashboard ( LIVE button)
+9. **Gacha/Collection System** - 6 rarity tiers with pity system (soft: 80, hard: 100), 4 collection sets with completion bonuses
+10. **Surveillance & Behavioral Profiling** - Faux telemetry system with player scoring, whale identification, and live dashboard ( LIVE button)
 
 ### 1. Variable Ratio Reinforcement (Gambling Mechanics)
 Mystery crates spawn every 2-5 minutes with the following drop rates:
@@ -101,7 +102,7 @@ Mystery crates spawn every 2-5 minutes with the following drop rates:
 
 ---
 
-## 8. Prestige/Reset System (NEW)
+## Phase 2: Gacha/Collection System (COMPLETE)
 
 ### The Sunk Cost Trap
 
@@ -140,7 +141,69 @@ After first reset, unlock permanent upgrades:
 
 ---
 
-## 9. Surveillance & Behavioral Profiling (NEW)
+## 9. Gacha/Collection System (NEW)
+
+### The Completionist Impulse
+
+Research (PMID: 7882574): "Rare loot box rewards trigger larger arousal and reward responses. Collection completion urge triggers 'completionist impulse'—the powerful desire to complete sets regardless of practical utility."
+
+**Psychological Principle**: Completionism + Scarcity + Variable Rewards
+
+### How It Works
+
+**Gacha Pulls:**
+- **Single Pull**: 100 stardust
+- **10-Pull**: 900 stardust (10% discount—encourages bulk spending)
+
+**Rarity Tiers:**
+| Rarity | Drop Rate | Bonus Multiplier |
+|--------|-----------|------------------|
+| Common | 55% | 1.0x |
+| Uncommon | 30% | 1.5x |
+| Rare | 10% | 2.0x |
+| Epic | 4% | 3.0x |
+| Legendary | 0.9% | 5.0x |
+| Mythic | 0.1% | 10.0x |
+
+### The Pity Trap
+
+Industry-standard "mercy" system that actually increases spending:
+
+- **Soft Pity (80)**: Rates start increasing after 80 pulls without legendary
+- **Hard Pity (100)**: Guaranteed legendary at 100 pulls
+- **Pity Carryover**: Carries between banners (encourages trying each new banner)
+
+**The Manipulation**: Players see "Only 20 pulls until guaranteed legendary!" and spend to reach pity, even when they didn't want to.
+
+### Collection Sets
+
+4 themed sets with completion bonuses:
+
+1. **Factory Blueprints** 🏭 - Technical schematics (+50% production on complete)
+2. **Ancient Artifacts** 🏺 - Mysterious relics (+100% offline on complete)
+3. **Manager Medals** 🎖️ - Achievement badges (+75% tap power on complete)
+4. **Factory Skins** 🎨 - Visual customizations (+25% all bonuses on complete)
+
+**The Trap**: "You've collected 73% of Summer Factory Set" — the brain cannot ignore incomplete sets.
+
+### Duplicate Conversion
+
+Duplicates convert to "stardust"—another currency to spend:
+- Higher rarity = more stardust
+- Creates value for "bad" pulls
+- Keeps players pulling to convert duplicates
+
+### Stardust Shop
+
+- **Gacha Ticket**: 90 stardust (slight discount)
+- **10-Pull Ticket**: 800 stardust (better value)
+- **Pity Blessing**: 500 stardust (reset pity to 50—emergency gambling)
+
+**Why it works**: Every pull is a gamble. Near-misses on legendary teases trigger the same dopamine as wins. Collections exploit our innate desire for completeness.
+
+---
+
+## 10. Surveillance & Behavioral Profiling (NEW)
 
 This demonstration includes a **faux telemetry system** that exposes how mobile games collect, analyze, and weaponize user data to maximize addiction and identify "whales" for targeted monetization.
 
@@ -219,6 +282,9 @@ The application will be available at `http://localhost:5173/`
 src/
 ├── components/
 │   ├── buildings/       # Building grid and cards
+│   ├── gacha/           # 🎰 Gacha/collection system (NEW)
+│   │   ├── GachaScreen.tsx      # Pull animation & buttons
+│   │   └── CollectionAlbum.tsx  # Collectible viewer
 │   ├── notifications/   # Achievement popups, offline modal
 │   ├── prestige/        # 🔄 Reset/ascension system (NEW)
 │   │   ├── PrestigePanel.tsx    # Ascension UI with readiness bar
@@ -230,10 +296,11 @@ src/
 │       ├── TelemetryLogger.ts  # Data collection service
 │       └── PlayerScorer.ts  # Whale identification & profiling
 ├── hooks/               # Game tick and interval management
-├── stores/              # Zustand stores (game, rewards, player, prestige)
+├── stores/              # Zustand stores (game, rewards, player, prestige, collection)
 └── types/               # TypeScript interfaces & calculations
-    ├── prestige.ts      # Ascension system types
-    └── telemetry/         # Data collection types
+    ├── collection.ts      # Gacha/collectible types
+    ├── gacha.ts           # Pity system & gacha mechanics
+    └── prestige.ts        # Ascension system types
 ```
 
 ---
