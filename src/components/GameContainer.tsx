@@ -11,6 +11,7 @@ import { DailyRewardPanel } from './rewards/DailyRewardPanel';
 import { StreakDisplay } from './rewards/StreakDisplay';
 import { AchievementPopup } from './notifications/AchievementPopup';
 import { OfflineProgressModal } from './notifications/OfflineProgressModal';
+import { TelemetryViewer } from './telemetry/TelemetryViewer';
 import { formatNumber } from '../types/resource';
 
 type Tab = 'build' | 'rewards' | 'leaderboard';
@@ -18,6 +19,7 @@ type Tab = 'build' | 'rewards' | 'leaderboard';
 export function GameContainer() {
   const [activeTab, setActiveTab] = useState<Tab>('build');
   const [showOfflineModal, setShowOfflineModal] = useState(true);
+  const [showTelemetry, setShowTelemetry] = useState(false);
   
   const resources = useGameStore(state => state.resources);
   const totalProduction = useGameStore(state => state.totalProduction);
@@ -37,7 +39,17 @@ export function GameContainer() {
       <div className="pt-12 pb-4 px-4 bg-gradient-to-b from-bg-secondary to-transparent">
         <div className="flex items-center justify-between mb-2">
           <h1 className="text-xl font-bold text-text-primary">Infinity Forge</h1>
-          <StreakDisplay />
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowTelemetry(true)}
+              className="px-3 py-1.5 bg-red-500/20 border border-red-500/50 rounded-lg text-xs text-red-400 font-medium hover:bg-red-500/30 transition-colors flex items-center gap-1.5"
+              title="View surveillance data being collected"
+            >
+              <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+              🔴 LIVE
+            </button>
+            <StreakDisplay />
+          </div>
         </div>
         
         <ResourceBar 
@@ -132,6 +144,12 @@ export function GameContainer() {
           />
         )}
       </AnimatePresence>
+
+      {/* Telemetry Viewer */}
+      <TelemetryViewer
+        isOpen={showTelemetry}
+        onClose={() => setShowTelemetry(false)}
+      />
     </div>
   );
 }
