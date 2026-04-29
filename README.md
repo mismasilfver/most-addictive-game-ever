@@ -32,6 +32,19 @@ These mechanics don't discriminate by age, culture, or socioeconomic status. The
 
 ## Addictive Mechanics Implemented
 
+### Already Implemented ✅
+1. **Variable Ratio Reinforcement** - Mystery crates (60/25/10/4/1% tier distribution)
+2. **Near-Miss Teases** - 30% "ALMOST LEGENDARY" glow on epic crates
+3. **Micro-Rewards** - Tap button, 12 achievements, daily login streaks
+4. **Phantom Social Pressure** - AI leaderboard, player always #11
+5. **Progress & Investment Hooks** - 8 building tiers, offline progress (50%)
+6. **Illusion of Control** - Building upgrades, "optimal purchase" indicator
+7. **Infinite Progression** - Procedural buildings beyond tier 8
+8. **Prestige/Reset System** - Sacrifice progress for permanent bonuses (+10% production per ascension)
+9. **Gacha/Collection System** - 6 rarity tiers with pity system (soft: 80, hard: 100), 4 collection sets
+10. **Time-Gated Content & FOMO** - Rush hours, weekend boost, flash sales, live countdowns
+11. **Surveillance & Behavioral Profiling** - Faux telemetry system with player scoring and live dashboard
+
 ### 1. Variable Ratio Reinforcement (Gambling Mechanics)
 Mystery crates spawn every 2-5 minutes with the following drop rates:
 - Common (60%) - small ore boost
@@ -90,7 +103,161 @@ Mystery crates spawn every 2-5 minutes with the following drop rates:
 
 ---
 
-## 8. Surveillance & Behavioral Profiling (NEW)
+## Phase 2: Gacha/Collection System (COMPLETE)
+
+### The Sunk Cost Trap
+
+The prestige system creates an **additional gameplay loop**—when progression slows, players strategically reset to accelerate future advancement. Previously time-consuming stages clear much faster, giving renewed sense of progress and empowerment.
+
+**Psychological Principle**: Sunk Cost Fallacy + Renewed Progression High
+
+### How It Works
+
+1. **Earn 10,000+ ore** and own at least 1 building to unlock ascension
+2. **Reset everything**—all ore, all buildings, all progress—GONE
+3. **Gain permanent bonuses** that make the next run faster:
+   - +10% production multiplier per ascension
+   - +5% offline efficiency per ascension (up to 100%)
+   - +25% tap power per ascension
+4. **Earn ascension points** to spend on permanent shop upgrades
+5. **Each run goes further** than the last, creating infinite loops
+
+### The Manipulation
+
+- **"Prestige Readiness" bar**: Shows 80% at "optimal" reset point—players feel compelled to reset "efficiently"
+- **Loss vs Gain comparison**: Confirmation modal dramatizes what you LOSE vs what you GAIN—exploiting loss aversion
+- **FOMO countdown**: "You could have earned 450 points by now if you had reset earlier"
+- **Visual progression**: Each ascension level displayed prominently—status symbol
+
+### Ascension Shop
+
+After first reset, unlock permanent upgrades:
+- **Eternal Furnace**: +5% production per purchase (max 10)
+- **Auto-Manager**: +5% offline efficiency per purchase (max 10)
+- **Mega Tap**: +10% tap power per purchase (max 20)
+- **Auto-Buyer**: Automatically buys best building every 60 seconds
+- **Prestige Sense**: Highlights optimal prestige timing
+
+**Why it works**: Players sacrifice current progress for future speed, creating endless cycles. Each ascension is a "fresh start" that hooks players again and again.
+
+---
+
+## 9. Gacha/Collection System (NEW)
+
+### The Completionist Impulse
+
+Research (PMID: 7882574): "Rare loot box rewards trigger larger arousal and reward responses. Collection completion urge triggers 'completionist impulse'—the powerful desire to complete sets regardless of practical utility."
+
+**Psychological Principle**: Completionism + Scarcity + Variable Rewards
+
+### How It Works
+
+**Gacha Pulls:**
+- **Single Pull**: 100 stardust
+- **10-Pull**: 900 stardust (10% discount—encourages bulk spending)
+
+**Rarity Tiers:**
+| Rarity | Drop Rate | Bonus Multiplier |
+|--------|-----------|------------------|
+| Common | 55% | 1.0x |
+| Uncommon | 30% | 1.5x |
+| Rare | 10% | 2.0x |
+| Epic | 4% | 3.0x |
+| Legendary | 0.9% | 5.0x |
+| Mythic | 0.1% | 10.0x |
+
+### The Pity Trap
+
+Industry-standard "mercy" system that actually increases spending:
+
+- **Soft Pity (80)**: Rates start increasing after 80 pulls without legendary
+- **Hard Pity (100)**: Guaranteed legendary at 100 pulls
+- **Pity Carryover**: Carries between banners (encourages trying each new banner)
+
+**The Manipulation**: Players see "Only 20 pulls until guaranteed legendary!" and spend to reach pity, even when they didn't want to.
+
+### Collection Sets
+
+4 themed sets with completion bonuses:
+
+1. **Factory Blueprints** 🏭 - Technical schematics (+50% production on complete)
+2. **Ancient Artifacts** 🏺 - Mysterious relics (+100% offline on complete)
+3. **Manager Medals** 🎖️ - Achievement badges (+75% tap power on complete)
+4. **Factory Skins** 🎨 - Visual customizations (+25% all bonuses on complete)
+
+**The Trap**: "You've collected 73% of Summer Factory Set" — the brain cannot ignore incomplete sets.
+
+### Duplicate Conversion
+
+Duplicates convert to "stardust"—another currency to spend:
+- Higher rarity = more stardust
+- Creates value for "bad" pulls
+- Keeps players pulling to convert duplicates
+
+### Stardust Shop
+
+- **Gacha Ticket**: 90 stardust (slight discount)
+- **10-Pull Ticket**: 800 stardust (better value)
+- **Pity Blessing**: 500 stardust (reset pity to 50—emergency gambling)
+
+**Why it works**: Every pull is a gamble. Near-misses on legendary teases trigger the same dopamine as wins. Collections exploit our innate desire for completeness.
+
+---
+
+## 10. Time-Gated Content & FOMO (NEW)
+
+### Temporal Manipulation
+
+Research: "Temporal patterns compel players to spend more time. Daily rewards, incentivising play at certain times, and limited-time offers use 'habit stacking'—attaching new behaviors to existing routines."
+
+**Psychological Principle**: Loss Aversion + Habit Formation + Scarcity
+
+### Rush Hour Windows
+
+Time-based bonuses that create daily habits:
+
+| Window | Time | Bonus |
+|--------|------|-------|
+| **Morning Rush** | 7-9 AM | +50% production |
+| **Lunch Break** | 12-1 PM | 2x crate spawns |
+| **Evening Grind** | 6-10 PM | 2x tap rewards |
+| **Night Owl** | 12-2 AM | +100% production |
+
+**The Manipulation**: Attaches game to daily routines. Players feel FOMO if they miss their "rush hour window." Night Owl window exploits insomnia and compulsive behavior.
+
+### Weekend Boost
+
+- **+25% all bonuses** every Saturday and Sunday
+- Creates "weekend binges" where players feel compelled to maximize the limited-time boost
+- Miss a weekend = permanent progress loss relative to others
+
+### Flash Sales
+
+- **15-minute countdown** creates extreme urgency
+- "Only 3 left!" — artificial scarcity
+- "47 people viewing now" — social proof pressure
+- Cannot be dismissed without conscious action
+
+### Limited-Time Offers
+
+- Starter Pack: $4.99 (24h only)
+- Weekend Warrior Bundle: $9.99 (appears after 12h inactive)
+- Emergency Resource Pack: $2.99 (shown when struggling)
+
+**The Manipulation**: Time pressure removes rational decision-making. "If I don't buy now, I lose this forever!"
+
+### Live Countdowns
+
+Everywhere in the UI:
+- "⚡ Morning Rush ends in 47:32"
+- "🔥 Flash Sale: 2 remaining!"
+- "⏰ Offer expires in 4 hours!"
+
+**Why it works**: Real-time countdowns create anxiety that can only be relieved by playing or paying.
+
+---
+
+## 11. Surveillance & Behavioral Profiling
 
 This demonstration includes a **faux telemetry system** that exposes how mobile games collect, analyze, and weaponize user data to maximize addiction and identify "whales" for targeted monetization.
 
@@ -169,16 +336,27 @@ The application will be available at `http://localhost:5173/`
 src/
 ├── components/
 │   ├── buildings/       # Building grid and cards
+│   ├── events/          # ⏰ Time-gated content & FOMO (NEW)
+│   │   └── TimedEventBanner.tsx  # Rush hour, flash sale banners
+│   ├── gacha/           # 🎰 Gacha/collection system
+│   │   ├── GachaScreen.tsx
+│   │   └── CollectionAlbum.tsx
 │   ├── notifications/   # Achievement popups, offline modal
+│   ├── prestige/        # 🔄 Reset/ascension system
+│   │   ├── PrestigePanel.tsx
+│   │   └── AscensionShop.tsx
 │   ├── resources/       # Resource bar with tap button
-│   └── rewards/         # Loot crates, daily rewards, leaderboard
-├── telemetry/           # 📊 Faux surveillance system (NEW)
-│   ├── events.ts        # 25+ telemetry event types
-│   ├── TelemetryLogger.ts  # Data collection service
-│   └── PlayerScorer.ts  # Whale identification & profiling
+│   ├── rewards/         # Loot crates, daily rewards, leaderboard
+│   └── telemetry/       # 📊 Faux surveillance system
+│       ├── events.ts
+│       ├── TelemetryLogger.ts
+│       └── PlayerScorer.ts
 ├── hooks/               # Game tick and interval management
-├── stores/              # Zustand stores (game, rewards, player)
-└── types/               # TypeScript interfaces and utilities
+├── stores/              # Zustand stores (game, rewards, player, prestige, collection)
+└── types/               # TypeScript interfaces & calculations
+    ├── collection.ts      # Gacha/collectible types
+    ├── gacha.ts           # Pity system & gacha mechanics
+    └── prestige.ts        # Ascension system types
 ```
 
 ---

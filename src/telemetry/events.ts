@@ -39,6 +39,10 @@ export enum TelemetryEventType {
   STREAK_CHECKED = 'streak_checked',
   STREAK_AT_RISK = 'streak_at_risk',
   
+  // Timed Events
+  EVENT_STARTED = 'event_started',
+  EVENT_ENDED = 'event_ended',
+  
   // Social - Status anxiety
   LEADERBOARD_VIEWED = 'leaderboard_viewed',
   RANK_CHECKED = 'rank_checked',
@@ -80,6 +84,11 @@ export interface TelemetryMetadata {
   buildingId?: string;
   buildingTier?: number;
   newLevel?: number;
+  
+  // Timed events
+  eventId?: string;
+  
+  // Resource
   resourceType?: string;
   resourceAmount?: number;
   
