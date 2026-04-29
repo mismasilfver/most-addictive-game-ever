@@ -90,6 +90,57 @@ Mystery crates spawn every 2-5 minutes with the following drop rates:
 
 ---
 
+## 8. Surveillance & Behavioral Profiling (NEW)
+
+This demonstration includes a **faux telemetry system** that exposes how mobile games collect, analyze, and weaponize user data to maximize addiction and identify "whales" for targeted monetization.
+
+### What Gets Tracked (That You Don't See)
+
+Every interaction is logged and analyzed:
+
+| Data Collected | What It Reveals | How It's Used |
+|---------------|-----------------|---------------|
+| **Tap velocity & patterns** | Frustration, desire, hesitation | Deploy offers when you're most vulnerable |
+| **Failed purchase attempts** | Purchase intent without funds | Target with "starter" $0.99 offers |
+| **Late night play sessions** | Loss of control, compulsive behavior | Deploy streak panic notifications at 11 PM |
+| **Leaderboard check frequency** | Status anxiety, competitiveness | Show phantom players "catching up" |
+| **Time spent viewing prices** | Price anchoring, interest level | Personalize discount offers |
+| **Crate dismiss vs open rate** | Declining interest | Deploy scarcity alerts or recovery bonuses |
+| **Upgrade failure patterns** | Resource deficiency | Offer resource bundles at optimal moments |
+
+### The "God View" Dashboard (What Companies See)
+
+The system demonstrates player segmentation used industry-wide:
+
+- 🐟 **MINNOWS** (bottom 70%): Low engagement, no spend. Used as engagement fodder for whales.
+- 🐬 **DOLPHINS** (next 20%): Occasional spenders. Targeted with upgrade paths to whale status.
+- 🐟 **TUNA** (next 8%): High engagement, moderate spend. Groomed for whale conversion.
+- 🐋 **WHALES** (top 1.9%): High value targets. Served exclusive VIP offers, prestige systems.
+- 🦑 **KRAKENS** (top 0.1%): Extreme spenders. Personal account managers, custom content.
+
+### Player Scoring Algorithm
+
+The system calculates:
+- **Engagement Score** (0-100): Session frequency, duration, time diversity
+- **Monetization Score** (0-100): Price sensitivity, discount response, scarcity buying
+- **Addiction Score** (0-100): Streak preservation, late night play, notification response
+- **Churn Risk** (0-100): Absence time, failed actions, declining engagement
+- **Predicted LTV**: Lifetime value in dollars
+- **Whale Probability**: Chance of becoming a high spender
+
+### Manipulation Engine
+
+Based on your profile, the system automatically deploys:
+- **Churn interventions**: "Your streak ends in 2 hours!"
+- **Scarcity alerts**: "Only 3 left at this price!"
+- **Recovery bonuses**: "Come back for 200% production boost!"
+- **Social pressure**: "Player X just passed you on the leaderboard!"
+- **Whale upgrade paths**: Gradual introduction to higher spending
+
+**Educational Purpose**: All data stays in your browser (localStorage only). No server communication. This demonstrates surveillance capitalism without participating in it.
+
+---
+
 ## Technical Stack
 
 - **Framework**: React 18 + TypeScript
@@ -121,6 +172,10 @@ src/
 │   ├── notifications/   # Achievement popups, offline modal
 │   ├── resources/       # Resource bar with tap button
 │   └── rewards/         # Loot crates, daily rewards, leaderboard
+├── telemetry/           # 📊 Faux surveillance system (NEW)
+│   ├── events.ts        # 25+ telemetry event types
+│   ├── TelemetryLogger.ts  # Data collection service
+│   └── PlayerScorer.ts  # Whale identification & profiling
 ├── hooks/               # Game tick and interval management
 ├── stores/              # Zustand stores (game, rewards, player)
 └── types/               # TypeScript interfaces and utilities
