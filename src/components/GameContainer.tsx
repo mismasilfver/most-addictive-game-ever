@@ -16,6 +16,7 @@ import { PrestigePanel } from './prestige/PrestigePanel';
 import { AscensionShop } from './prestige/AscensionShop';
 import { GachaScreen } from './gacha/GachaScreen';
 import { CollectionAlbum } from './gacha/CollectionAlbum';
+import { TimedEventBanner } from './events/TimedEventBanner';
 import { formatNumber } from '../types/resource';
 
 type Tab = 'build' | 'rewards' | 'leaderboard' | 'prestige' | 'gacha';
@@ -41,6 +42,9 @@ export function GameContainer() {
     <div className="h-full flex flex-col">
       {/* Header */}
       <div className="pt-12 pb-4 px-4 bg-gradient-to-b from-bg-secondary to-transparent">
+        {/* Timed Event Banner */}
+        <TimedEventBanner />
+
         <div className="flex items-center justify-between mb-2">
           <h1 className="text-xl font-bold text-text-primary">Infinity Forge</h1>
           <div className="flex items-center gap-2">
