@@ -79,6 +79,7 @@ export interface TelemetryMetadata {
   screen?: string;
   buildingId?: string;
   buildingTier?: number;
+  newLevel?: number;
   resourceType?: string;
   resourceAmount?: number;
   

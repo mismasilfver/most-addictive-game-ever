@@ -3,6 +3,8 @@ import { persist } from 'zustand/middleware';
 import type { Building, BuildingType } from '../types/building';
 import { BUILDING_TYPES, calculateBuildingCost, calculateBuildingProduction, generateProceduralBuilding } from '../types/building';
 import type { Resource, ResourceType } from '../types/resource';
+import { telemetry } from '../telemetry';
+import { TelemetryEventType } from '../telemetry/events';
 
 interface GameState {
   resources: Record<ResourceType, Resource>;
@@ -87,10 +89,24 @@ export const useGameStore = create<GameState>()(
 
       buyBuilding: (buildingType: BuildingType) => {
         const cost = get().getBuildingCost(buildingType);
+        const balance = get().resources.ore.amount;
         
         if (!get().spendResources('ore', cost)) {
+          // Log failed purchase attempt (important for whale targeting)
+          telemetry.logEvent(TelemetryEventType.BUILDING_PURCHASE_FAILED, {
+            buildingId: buildingType.id,
+            cost,
+            playerBalance: balance,
+          });
           return;
         }
+        
+        // Log successful purchase
+        telemetry.logEvent(TelemetryEventType.BUILDING_PURCHASED, {
+          buildingId: buildingType.id,
+          cost,
+          buildingTier: buildingType.tier,
+        });
 
         set((state) => {
           const existingBuilding = state.buildings.find(b => b.id === buildingType.id);
@@ -133,7 +149,20 @@ export const useGameStore = create<GameState>()(
         
         const upgradeCost = Math.floor(building.baseCost * Math.pow(2, building.level) * 0.5);
         
-        if (resources.ore.amount < upgradeCost) return;
+        if (resources.ore.amount < upgradeCost) {
+          telemetry.logEvent(TelemetryEventType.UPGRADE_FAILED, {
+            buildingId,
+            cost: upgradeCost,
+            playerBalance: resources.ore.amount,
+          });
+          return;
+        }
+        
+        telemetry.logEvent(TelemetryEventType.UPGRADE_COMPLETED, {
+          buildingId,
+          cost: upgradeCost,
+          newLevel: building.level + 1,
+        });
         
         set((state) => {
           const updatedBuildings = state.buildings.map(b =>
@@ -158,6 +187,11 @@ export const useGameStore = create<GameState>()(
       },
 
       addResources: (type: ResourceType, amount: number) => {
+        telemetry.logEvent(TelemetryEventType.RESOURCE_EARNED, {
+          resourceType: type,
+          resourceAmount: amount,
+        });
+        
         set((state) => ({
           resources: {
             ...state.resources,
@@ -176,6 +210,11 @@ export const useGameStore = create<GameState>()(
         if (resources[type].amount < amount) {
           return false;
         }
+        
+        telemetry.logEvent(TelemetryEventType.RESOURCE_SPENT, {
+          resourceType: type,
+          resourceAmount: amount,
+        });
         
         set((state) => ({
           resources: {
