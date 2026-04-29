@@ -32,7 +32,7 @@ These mechanics don't discriminate by age, culture, or socioeconomic status. The
 
 ## Addictive Mechanics Implemented
 
-### Already Implemented 
+### Already Implemented ✅
 1. **Variable Ratio Reinforcement** - Mystery crates (60/25/10/4/1% tier distribution)
 2. **Near-Miss Teases** - 30% "ALMOST LEGENDARY" glow on epic crates
 3. **Micro-Rewards** - Tap button, 12 achievements, daily login streaks
@@ -41,8 +41,9 @@ These mechanics don't discriminate by age, culture, or socioeconomic status. The
 6. **Illusion of Control** - Building upgrades, "optimal purchase" indicator
 7. **Infinite Progression** - Procedural buildings beyond tier 8
 8. **Prestige/Reset System** - Sacrifice progress for permanent bonuses (+10% production per ascension)
-9. **Gacha/Collection System** - 6 rarity tiers with pity system (soft: 80, hard: 100), 4 collection sets with completion bonuses
-10. **Surveillance & Behavioral Profiling** - Faux telemetry system with player scoring, whale identification, and live dashboard ( LIVE button)
+9. **Gacha/Collection System** - 6 rarity tiers with pity system (soft: 80, hard: 100), 4 collection sets
+10. **Time-Gated Content & FOMO** - Rush hours, weekend boost, flash sales, live countdowns
+11. **Surveillance & Behavioral Profiling** - Faux telemetry system with player scoring and live dashboard
 
 ### 1. Variable Ratio Reinforcement (Gambling Mechanics)
 Mystery crates spawn every 2-5 minutes with the following drop rates:
@@ -203,7 +204,60 @@ Duplicates convert to "stardust"—another currency to spend:
 
 ---
 
-## 10. Surveillance & Behavioral Profiling (NEW)
+## 10. Time-Gated Content & FOMO (NEW)
+
+### Temporal Manipulation
+
+Research: "Temporal patterns compel players to spend more time. Daily rewards, incentivising play at certain times, and limited-time offers use 'habit stacking'—attaching new behaviors to existing routines."
+
+**Psychological Principle**: Loss Aversion + Habit Formation + Scarcity
+
+### Rush Hour Windows
+
+Time-based bonuses that create daily habits:
+
+| Window | Time | Bonus |
+|--------|------|-------|
+| **Morning Rush** | 7-9 AM | +50% production |
+| **Lunch Break** | 12-1 PM | 2x crate spawns |
+| **Evening Grind** | 6-10 PM | 2x tap rewards |
+| **Night Owl** | 12-2 AM | +100% production |
+
+**The Manipulation**: Attaches game to daily routines. Players feel FOMO if they miss their "rush hour window." Night Owl window exploits insomnia and compulsive behavior.
+
+### Weekend Boost
+
+- **+25% all bonuses** every Saturday and Sunday
+- Creates "weekend binges" where players feel compelled to maximize the limited-time boost
+- Miss a weekend = permanent progress loss relative to others
+
+### Flash Sales
+
+- **15-minute countdown** creates extreme urgency
+- "Only 3 left!" — artificial scarcity
+- "47 people viewing now" — social proof pressure
+- Cannot be dismissed without conscious action
+
+### Limited-Time Offers
+
+- Starter Pack: $4.99 (24h only)
+- Weekend Warrior Bundle: $9.99 (appears after 12h inactive)
+- Emergency Resource Pack: $2.99 (shown when struggling)
+
+**The Manipulation**: Time pressure removes rational decision-making. "If I don't buy now, I lose this forever!"
+
+### Live Countdowns
+
+Everywhere in the UI:
+- "⚡ Morning Rush ends in 47:32"
+- "🔥 Flash Sale: 2 remaining!"
+- "⏰ Offer expires in 4 hours!"
+
+**Why it works**: Real-time countdowns create anxiety that can only be relieved by playing or paying.
+
+---
+
+## 11. Surveillance & Behavioral Profiling
 
 This demonstration includes a **faux telemetry system** that exposes how mobile games collect, analyze, and weaponize user data to maximize addiction and identify "whales" for targeted monetization.
 
@@ -282,19 +336,21 @@ The application will be available at `http://localhost:5173/`
 src/
 ├── components/
 │   ├── buildings/       # Building grid and cards
-│   ├── gacha/           # 🎰 Gacha/collection system (NEW)
-│   │   ├── GachaScreen.tsx      # Pull animation & buttons
-│   │   └── CollectionAlbum.tsx  # Collectible viewer
+│   ├── events/          # ⏰ Time-gated content & FOMO (NEW)
+│   │   └── TimedEventBanner.tsx  # Rush hour, flash sale banners
+│   ├── gacha/           # 🎰 Gacha/collection system
+│   │   ├── GachaScreen.tsx
+│   │   └── CollectionAlbum.tsx
 │   ├── notifications/   # Achievement popups, offline modal
-│   ├── prestige/        # 🔄 Reset/ascension system (NEW)
-│   │   ├── PrestigePanel.tsx    # Ascension UI with readiness bar
-│   │   └── AscensionShop.tsx    # Permanent upgrades shop
+│   ├── prestige/        # 🔄 Reset/ascension system
+│   │   ├── PrestigePanel.tsx
+│   │   └── AscensionShop.tsx
 │   ├── resources/       # Resource bar with tap button
 │   ├── rewards/         # Loot crates, daily rewards, leaderboard
-│   └── telemetry/       # 📊 Faux surveillance system (NEW)
-│       ├── events.ts        # 25+ telemetry event types
-│       ├── TelemetryLogger.ts  # Data collection service
-│       └── PlayerScorer.ts  # Whale identification & profiling
+│   └── telemetry/       # 📊 Faux surveillance system
+│       ├── events.ts
+│       ├── TelemetryLogger.ts
+│       └── PlayerScorer.ts
 ├── hooks/               # Game tick and interval management
 ├── stores/              # Zustand stores (game, rewards, player, prestige, collection)
 └── types/               # TypeScript interfaces & calculations
