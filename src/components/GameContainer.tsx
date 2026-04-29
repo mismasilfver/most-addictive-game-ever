@@ -12,9 +12,11 @@ import { StreakDisplay } from './rewards/StreakDisplay';
 import { AchievementPopup } from './notifications/AchievementPopup';
 import { OfflineProgressModal } from './notifications/OfflineProgressModal';
 import { TelemetryViewer } from './telemetry/TelemetryViewer';
+import { PrestigePanel } from './prestige/PrestigePanel';
+import { AscensionShop } from './prestige/AscensionShop';
 import { formatNumber } from '../types/resource';
 
-type Tab = 'build' | 'rewards' | 'leaderboard';
+type Tab = 'build' | 'rewards' | 'leaderboard' | 'prestige';
 
 export function GameContainer() {
   const [activeTab, setActiveTab] = useState<Tab>('build');
@@ -65,7 +67,7 @@ export function GameContainer() {
       
       {/* Tab Navigation */}
       <div className="flex border-b border-bg-card">
-        {(['build', 'rewards', 'leaderboard'] as Tab[]).map((tab) => (
+        {(['build', 'rewards', 'leaderboard', 'prestige'] as Tab[]).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
@@ -120,6 +122,22 @@ export function GameContainer() {
               className="h-full overflow-y-auto scrollbar-hide p-4"
             >
               <LeaderboardPanel />
+            </motion.div>
+          )}
+          
+          {activeTab === 'prestige' && (
+            <motion.div
+              key="prestige"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.2 }}
+              className="h-full overflow-y-auto scrollbar-hide p-4"
+            >
+              <div className="grid md:grid-cols-2 gap-4">
+                <PrestigePanel />
+                <AscensionShop />
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
