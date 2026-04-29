@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { telemetry } from '../telemetry';
+import { TelemetryEventType } from '../telemetry/events';
 
 interface PhantomPlayer {
   id: string;
@@ -83,6 +85,10 @@ export const usePlayerStore = create<PlayerState>()(
       updateLeaderboard: (playerProduction: number, playerTotalOre: number) => {
         const { phantomPlayers } = get();
         
+        telemetry.logEvent(TelemetryEventType.LEADERBOARD_VIEWED, {
+          playerRank: get().playerRank,
+        });
+        
         // Update phantom players with slight random changes
         const updatedPhantoms = phantomPlayers.map(p => ({
           ...p,
@@ -117,6 +123,9 @@ export const usePlayerStore = create<PlayerState>()(
       },
 
       recordTap: () => {
+        telemetry.logEvent(TelemetryEventType.TAPS_PER_MINUTE, {
+          tapCount: 1,
+        });
         set((state) => ({ totalTaps: state.totalTaps + 1 }));
       },
 
@@ -157,6 +166,10 @@ export const usePlayerStore = create<PlayerState>()(
       },
 
       unlockAchievement: (id: string) => {
+        telemetry.logEvent(TelemetryEventType.ACHIEVEMENT_UNLOCKED, {
+          achievementId: id,
+        });
+        
         set((state) => ({
           achievements: state.achievements.map(a =>
             a.id === id ? { ...a, unlocked: true, unlockedAt: Date.now() } : a

@@ -2,6 +2,8 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { MysteryCrate, RewardTier, RewardTierConfig, DailyReward } from '../types/reward';
 import { REWARD_TIERS, rollRewardTier, calculateCrateSpawnTime, DAILY_REWARDS } from '../types/reward';
+import { telemetry } from '../telemetry';
+import { TelemetryEventType } from '../telemetry/events';
 
 interface RewardState {
   crates: MysteryCrate[];
@@ -56,6 +58,10 @@ export const useRewardStore = create<RewardState>()(
           isNearMiss,
         };
         
+        telemetry.logEvent(TelemetryEventType.CRATE_SPAWNED, {
+          crateRarity: tier.tier,
+        });
+        
         set((state) => ({
           crates: [...state.crates.filter(c => !c.openTime).slice(-4), newCrate],
           nextCrateTime: calculateCrateSpawnTime(),
@@ -69,6 +75,11 @@ export const useRewardStore = create<RewardState>()(
         if (!crate) return null;
         
         const tier = REWARD_TIERS.find(t => t.tier === crate.tier)!;
+        
+        telemetry.logEvent(TelemetryEventType.CRATE_OPENED, {
+          crateRarity: crate.tier,
+          resourceAmount: crate.baseReward,
+        });
         
         // Near miss tease - if it's a near miss, briefly show legendary glow before revealing
         
@@ -123,6 +134,12 @@ export const useRewardStore = create<RewardState>()(
             : dailyRewards,
         });
         
+        if (streakBroken) {
+          telemetry.logEvent(TelemetryEventType.STREAK_AT_RISK, {
+            streakDay: newStreak,
+          });
+        }
+        
         return { isNewDay: true, streakBroken };
       },
 
@@ -135,6 +152,11 @@ export const useRewardStore = create<RewardState>()(
         if (day > dailyStreak) return 0;
         
         const reward = dailyRewards[rewardIndex].reward;
+        
+        telemetry.logEvent(TelemetryEventType.REWARD_CLAIMED, {
+          streakDay: day,
+          resourceAmount: reward,
+        });
         
         set((state) => ({
           dailyRewards: state.dailyRewards.map((r, i) =>
