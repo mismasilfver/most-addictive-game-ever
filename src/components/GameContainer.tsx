@@ -12,9 +12,14 @@ import { StreakDisplay } from './rewards/StreakDisplay';
 import { AchievementPopup } from './notifications/AchievementPopup';
 import { OfflineProgressModal } from './notifications/OfflineProgressModal';
 import { TelemetryViewer } from './telemetry/TelemetryViewer';
+import { PrestigePanel } from './prestige/PrestigePanel';
+import { AscensionShop } from './prestige/AscensionShop';
+import { GachaScreen } from './gacha/GachaScreen';
+import { CollectionAlbum } from './gacha/CollectionAlbum';
+import { TimedEventBanner } from './events/TimedEventBanner';
 import { formatNumber } from '../types/resource';
 
-type Tab = 'build' | 'rewards' | 'leaderboard';
+type Tab = 'build' | 'rewards' | 'leaderboard' | 'prestige' | 'gacha';
 
 export function GameContainer() {
   const [activeTab, setActiveTab] = useState<Tab>('build');
@@ -37,6 +42,9 @@ export function GameContainer() {
     <div className="h-full flex flex-col">
       {/* Header */}
       <div className="pt-12 pb-4 px-4 bg-gradient-to-b from-bg-secondary to-transparent">
+        {/* Timed Event Banner */}
+        <TimedEventBanner />
+
         <div className="flex items-center justify-between mb-2">
           <h1 className="text-xl font-bold text-text-primary">Infinity Forge</h1>
           <div className="flex items-center gap-2">
@@ -64,8 +72,8 @@ export function GameContainer() {
       </div>
       
       {/* Tab Navigation */}
-      <div className="flex border-b border-bg-card">
-        {(['build', 'rewards', 'leaderboard'] as Tab[]).map((tab) => (
+      <div className="flex border-b border-bg-card overflow-x-auto scrollbar-hide">
+        {(['build', 'rewards', 'leaderboard', 'prestige', 'gacha'] as Tab[]).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
@@ -122,6 +130,38 @@ export function GameContainer() {
               <LeaderboardPanel />
             </motion.div>
           )}
+          
+          {activeTab === 'prestige' && (
+            <motion.div
+              key="prestige"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.2 }}
+              className="h-full overflow-y-auto scrollbar-hide p-4"
+            >
+              <div className="grid md:grid-cols-2 gap-4">
+                <PrestigePanel />
+                <AscensionShop />
+              </div>
+            </motion.div>
+          )}
+        
+        {activeTab === 'gacha' && (
+          <motion.div
+            key="gacha"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.2 }}
+            className="h-full overflow-y-auto scrollbar-hide p-4"
+          >
+            <div className="grid md:grid-cols-2 gap-4">
+              <GachaScreen />
+              <CollectionAlbum />
+            </div>
+          </motion.div>
+        )}
         </AnimatePresence>
       </div>
       
