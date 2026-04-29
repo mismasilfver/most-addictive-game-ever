@@ -13,3 +13,4 @@ export {
   type TelemetryMetadata,
   type DeviceInfo,
 } from './events';
+export { PlayerScorer, PlayerSegment, type PlayerScore, type PsychometricProfile } from './PlayerScorer';
