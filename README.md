@@ -32,6 +32,17 @@ These mechanics don't discriminate by age, culture, or socioeconomic status. The
 
 ## Addictive Mechanics Implemented
 
+### Already Implemented 
+1. **Variable Ratio Reinforcement** - Mystery crates (60/25/10/4/1% tier distribution)
+2. **Near-Miss Teases** - 30% "ALMOST LEGENDARY" glow on epic crates
+3. **Micro-Rewards** - Tap button, 12 achievements, daily login streaks
+4. **Phantom Social Pressure** - AI leaderboard, player always #11
+5. **Progress & Investment Hooks** - 8 building tiers, offline progress (50%)
+6. **Illusion of Control** - Building upgrades, "optimal purchase" indicator
+7. **Infinite Progression** - Procedural buildings beyond tier 8
+8. **Prestige/Reset System** - Sacrifice progress for permanent bonuses (+10% production per ascension)
+9. **Surveillance & Behavioral Profiling** - Faux telemetry system with player scoring, whale identification, and live dashboard ( LIVE button)
+
 ### 1. Variable Ratio Reinforcement (Gambling Mechanics)
 Mystery crates spawn every 2-5 minutes with the following drop rates:
 - Common (60%) - small ore boost
@@ -90,7 +101,46 @@ Mystery crates spawn every 2-5 minutes with the following drop rates:
 
 ---
 
-## 8. Surveillance & Behavioral Profiling (NEW)
+## 8. Prestige/Reset System (NEW)
+
+### The Sunk Cost Trap
+
+The prestige system creates an **additional gameplay loop**—when progression slows, players strategically reset to accelerate future advancement. Previously time-consuming stages clear much faster, giving renewed sense of progress and empowerment.
+
+**Psychological Principle**: Sunk Cost Fallacy + Renewed Progression High
+
+### How It Works
+
+1. **Earn 10,000+ ore** and own at least 1 building to unlock ascension
+2. **Reset everything**—all ore, all buildings, all progress—GONE
+3. **Gain permanent bonuses** that make the next run faster:
+   - +10% production multiplier per ascension
+   - +5% offline efficiency per ascension (up to 100%)
+   - +25% tap power per ascension
+4. **Earn ascension points** to spend on permanent shop upgrades
+5. **Each run goes further** than the last, creating infinite loops
+
+### The Manipulation
+
+- **"Prestige Readiness" bar**: Shows 80% at "optimal" reset point—players feel compelled to reset "efficiently"
+- **Loss vs Gain comparison**: Confirmation modal dramatizes what you LOSE vs what you GAIN—exploiting loss aversion
+- **FOMO countdown**: "You could have earned 450 points by now if you had reset earlier"
+- **Visual progression**: Each ascension level displayed prominently—status symbol
+
+### Ascension Shop
+
+After first reset, unlock permanent upgrades:
+- **Eternal Furnace**: +5% production per purchase (max 10)
+- **Auto-Manager**: +5% offline efficiency per purchase (max 10)
+- **Mega Tap**: +10% tap power per purchase (max 20)
+- **Auto-Buyer**: Automatically buys best building every 60 seconds
+- **Prestige Sense**: Highlights optimal prestige timing
+
+**Why it works**: Players sacrifice current progress for future speed, creating endless cycles. Each ascension is a "fresh start" that hooks players again and again.
+
+---
+
+## 9. Surveillance & Behavioral Profiling (NEW)
 
 This demonstration includes a **faux telemetry system** that exposes how mobile games collect, analyze, and weaponize user data to maximize addiction and identify "whales" for targeted monetization.
 
@@ -170,15 +220,20 @@ src/
 ├── components/
 │   ├── buildings/       # Building grid and cards
 │   ├── notifications/   # Achievement popups, offline modal
+│   ├── prestige/        # 🔄 Reset/ascension system (NEW)
+│   │   ├── PrestigePanel.tsx    # Ascension UI with readiness bar
+│   │   └── AscensionShop.tsx    # Permanent upgrades shop
 │   ├── resources/       # Resource bar with tap button
-│   └── rewards/         # Loot crates, daily rewards, leaderboard
-├── telemetry/           # 📊 Faux surveillance system (NEW)
-│   ├── events.ts        # 25+ telemetry event types
-│   ├── TelemetryLogger.ts  # Data collection service
-│   └── PlayerScorer.ts  # Whale identification & profiling
+│   ├── rewards/         # Loot crates, daily rewards, leaderboard
+│   └── telemetry/       # 📊 Faux surveillance system (NEW)
+│       ├── events.ts        # 25+ telemetry event types
+│       ├── TelemetryLogger.ts  # Data collection service
+│       └── PlayerScorer.ts  # Whale identification & profiling
 ├── hooks/               # Game tick and interval management
-├── stores/              # Zustand stores (game, rewards, player)
-└── types/               # TypeScript interfaces and utilities
+├── stores/              # Zustand stores (game, rewards, player, prestige)
+└── types/               # TypeScript interfaces & calculations
+    ├── prestige.ts      # Ascension system types
+    └── telemetry/         # Data collection types
 ```
 
 ---
