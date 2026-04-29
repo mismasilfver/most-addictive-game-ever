@@ -14,9 +14,11 @@ import { OfflineProgressModal } from './notifications/OfflineProgressModal';
 import { TelemetryViewer } from './telemetry/TelemetryViewer';
 import { PrestigePanel } from './prestige/PrestigePanel';
 import { AscensionShop } from './prestige/AscensionShop';
+import { GachaScreen } from './gacha/GachaScreen';
+import { CollectionAlbum } from './gacha/CollectionAlbum';
 import { formatNumber } from '../types/resource';
 
-type Tab = 'build' | 'rewards' | 'leaderboard' | 'prestige';
+type Tab = 'build' | 'rewards' | 'leaderboard' | 'prestige' | 'gacha';
 
 export function GameContainer() {
   const [activeTab, setActiveTab] = useState<Tab>('build');
@@ -66,8 +68,8 @@ export function GameContainer() {
       </div>
       
       {/* Tab Navigation */}
-      <div className="flex border-b border-bg-card">
-        {(['build', 'rewards', 'leaderboard', 'prestige'] as Tab[]).map((tab) => (
+      <div className="flex border-b border-bg-card overflow-x-auto scrollbar-hide">
+        {(['build', 'rewards', 'leaderboard', 'prestige', 'gacha'] as Tab[]).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
@@ -140,6 +142,22 @@ export function GameContainer() {
               </div>
             </motion.div>
           )}
+        
+        {activeTab === 'gacha' && (
+          <motion.div
+            key="gacha"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.2 }}
+            className="h-full overflow-y-auto scrollbar-hide p-4"
+          >
+            <div className="grid md:grid-cols-2 gap-4">
+              <GachaScreen />
+              <CollectionAlbum />
+            </div>
+          </motion.div>
+        )}
         </AnimatePresence>
       </div>
       
