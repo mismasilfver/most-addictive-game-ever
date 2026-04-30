@@ -82,9 +82,9 @@ export function GameContainer() {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`flex-1 py-3 text-sm font-medium capitalize transition-colors ${
-              activeTab === tab 
-                ? 'text-accent border-b-2 border-accent' 
+            className={`flex-shrink-0 px-4 py-3 text-sm font-medium capitalize transition-colors whitespace-nowrap ${
+              activeTab === tab
+                ? 'text-accent border-b-2 border-accent'
                 : 'text-text-secondary hover:text-text-primary'
             }`}
           >
