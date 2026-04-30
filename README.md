@@ -43,7 +43,11 @@ These mechanics don't discriminate by age, culture, or socioeconomic status. The
 8. **Prestige/Reset System** - Sacrifice progress for permanent bonuses (+10% production per ascension)
 9. **Gacha/Collection System** - 6 rarity tiers with pity system (soft: 80, hard: 100), 4 collection sets
 10. **Time-Gated Content & FOMO** - Rush hours, weekend boost, flash sales, live countdowns
-11. **Surveillance & Behavioral Profiling** - Faux telemetry system with player scoring and live dashboard
+11. **Social/Guild System** - Phantom guild with kick-anxiety, contribution leaderboard (player never #1)
+12. **Notification & Engagement Hooks** - Streak warnings, comeback bonus (3x), online player ticker
+13. **VIP/Whale Mechanics** - 10 VIP levels, premium shop with "Almost There!" FOMO modal, gems currency
+14. **Advanced Near-Miss & Sunk Cost** - Near-miss scenarios, sunk cost tracker, loss amplifiers
+15. **Surveillance & Behavioral Profiling** - Faux telemetry system with player scoring and live dashboard
 
 ### 1. Variable Ratio Reinforcement (Gambling Mechanics)
 Mystery crates spawn every 2-5 minutes with the following drop rates:
@@ -336,27 +340,32 @@ The application will be available at `http://localhost:5173/`
 src/
 ├── components/
 │   ├── buildings/       # Building grid and cards
-│   ├── events/          # ⏰ Time-gated content & FOMO (NEW)
-│   │   └── TimedEventBanner.tsx  # Rush hour, flash sale banners
+│   ├── events/          # ⏰ Time-gated content & FOMO
+│   │   └── TimedEventBanner.tsx
 │   ├── gacha/           # 🎰 Gacha/collection system
 │   │   ├── GachaScreen.tsx
 │   │   └── CollectionAlbum.tsx
-│   ├── notifications/   # Achievement popups, offline modal
+│   ├── guild/           # 👥 Social/guild system
+│   │   └── GuildPanel.tsx
+│   ├── notifications/   # 🔔 In-app alerts & comeback bonus
+│   │   └── NotificationCenter.tsx
 │   ├── prestige/        # 🔄 Reset/ascension system
 │   │   ├── PrestigePanel.tsx
 │   │   └── AscensionShop.tsx
 │   ├── resources/       # Resource bar with tap button
 │   ├── rewards/         # Loot crates, daily rewards, leaderboard
-│   └── telemetry/       # 📊 Faux surveillance system
-│       ├── events.ts
-│       ├── TelemetryLogger.ts
-│       └── PlayerScorer.ts
+│   ├── sunkCost/        # 💸 Investment tracker & near-miss
+│   │   └── SunkCostDisplay.tsx
+│   ├── telemetry/       # 📊 Faux surveillance system
+│   └── vip/             # 👑 VIP status & premium shop
+│       ├── VIPStatusBar.tsx
+│       └── PremiumShop.tsx
 ├── hooks/               # Game tick and interval management
-├── stores/              # Zustand stores (game, rewards, player, prestige, collection)
-└── types/               # TypeScript interfaces & calculations
-    ├── collection.ts      # Gacha/collectible types
-    ├── gacha.ts           # Pity system & gacha mechanics
-    └── prestige.ts        # Ascension system types
+├── stores/              # Zustand stores (11 stores total)
+└── types/               # TypeScript interfaces & utilities
+    ├── collection.ts    ├── gacha.ts        ├── guild.ts
+    ├── nearMiss.ts      ├── notifications.ts├── prestige.ts
+    ├── timedEvents.ts   └── vip.ts
 ```
 
 ---
