@@ -17,9 +17,14 @@ import { AscensionShop } from './prestige/AscensionShop';
 import { GachaScreen } from './gacha/GachaScreen';
 import { CollectionAlbum } from './gacha/CollectionAlbum';
 import { TimedEventBanner } from './events/TimedEventBanner';
+import { GuildPanel } from './guild/GuildPanel';
+import { NotificationCenter } from './notifications/NotificationCenter';
+import { VIPStatusBar } from './vip/VIPStatusBar';
+import { PremiumShop } from './vip/PremiumShop';
+import { SunkCostDisplay } from './sunkCost/SunkCostDisplay';
 import { formatNumber } from '../types/resource';
 
-type Tab = 'build' | 'rewards' | 'leaderboard' | 'prestige' | 'gacha';
+type Tab = 'build' | 'rewards' | 'leaderboard' | 'prestige' | 'gacha' | 'guild' | 'vip' | 'stats';
 
 export function GameContainer() {
   const [activeTab, setActiveTab] = useState<Tab>('build');
@@ -73,13 +78,13 @@ export function GameContainer() {
       
       {/* Tab Navigation */}
       <div className="flex border-b border-bg-card overflow-x-auto scrollbar-hide">
-        {(['build', 'rewards', 'leaderboard', 'prestige', 'gacha'] as Tab[]).map((tab) => (
+        {(['build', 'rewards', 'leaderboard', 'prestige', 'gacha', 'guild', 'vip', 'stats'] as Tab[]).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`flex-1 py-3 text-sm font-medium capitalize transition-colors ${
-              activeTab === tab 
-                ? 'text-accent border-b-2 border-accent' 
+            className={`flex-shrink-0 px-4 py-3 text-sm font-medium capitalize transition-colors whitespace-nowrap ${
+              activeTab === tab
+                ? 'text-accent border-b-2 border-accent'
                 : 'text-text-secondary hover:text-text-primary'
             }`}
           >
@@ -160,6 +165,48 @@ export function GameContainer() {
               <GachaScreen />
               <CollectionAlbum />
             </div>
+          </motion.div>
+        )}
+        {activeTab === 'guild' && (
+          <motion.div
+            key="guild"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.2 }}
+            className="h-full overflow-y-auto scrollbar-hide p-4"
+          >
+            <div className="grid md:grid-cols-2 gap-4">
+              <GuildPanel />
+              <NotificationCenter />
+            </div>
+          </motion.div>
+        )}
+
+        {activeTab === 'vip' && (
+          <motion.div
+            key="vip"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.2 }}
+            className="h-full overflow-y-auto scrollbar-hide p-4 space-y-4"
+          >
+            <VIPStatusBar />
+            <PremiumShop />
+          </motion.div>
+        )}
+
+        {activeTab === 'stats' && (
+          <motion.div
+            key="stats"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.2 }}
+            className="h-full overflow-y-auto scrollbar-hide p-4"
+          >
+            <SunkCostDisplay />
           </motion.div>
         )}
         </AnimatePresence>

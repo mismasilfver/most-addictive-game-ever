@@ -43,7 +43,11 @@ These mechanics don't discriminate by age, culture, or socioeconomic status. The
 8. **Prestige/Reset System** - Sacrifice progress for permanent bonuses (+10% production per ascension)
 9. **Gacha/Collection System** - 6 rarity tiers with pity system (soft: 80, hard: 100), 4 collection sets
 10. **Time-Gated Content & FOMO** - Rush hours, weekend boost, flash sales, live countdowns
-11. **Surveillance & Behavioral Profiling** - Faux telemetry system with player scoring and live dashboard
+11. **Social/Guild System** - Phantom guild with kick-anxiety, contribution leaderboard (player never #1)
+12. **Notification & Engagement Hooks** - Streak warnings, comeback bonus (3x), online player ticker
+13. **VIP/Whale Mechanics** - 10 VIP levels, premium shop with "Almost There!" FOMO modal, gems currency
+14. **Advanced Near-Miss & Sunk Cost** - Near-miss scenarios, sunk cost tracker, loss amplifiers
+15. **Surveillance & Behavioral Profiling** - Faux telemetry system with player scoring and live dashboard
 
 ### 1. Variable Ratio Reinforcement (Gambling Mechanics)
 Mystery crates spawn every 2-5 minutes with the following drop rates:
@@ -257,7 +261,169 @@ Everywhere in the UI:
 
 ---
 
-## 11. Surveillance & Behavioral Profiling
+## 11. Social / Guild System
+
+### The Tribe Instinct
+
+Research: "Social obligation and group accountability are among the most powerful drivers of continued engagement. Players continue games they no longer enjoy to avoid disappointing virtual peers."
+
+**Psychological Principle**: Social Proof + Belonging + Loss Aversion + Status Seeking
+
+### How It Works
+
+- **Phantom Guild**: A fake guild of 19 AI members with plausible names, production rates, and "last active" timestamps
+- **Contribution Leaderboard**: Player is always ranked **#3 or #4** — close enough to feel competitive, never winning
+- **Weekly Guild Goal**: Collective ore target with tiered rewards and a live countdown
+- **Activity Feed**: Scrolling feed of fabricated actions: "SteelTycoon88 contributed 42,000 ore"
+
+### The Kick-Anxiety Loop
+
+| Rank | Message |
+|------|---------|
+| **Last place** | "⚠️ Lowest contributor may be removed in 1 hour!" |
+| **Near last** | "You've been inactive for 2 hours. Guild needs your production!" |
+| **On-goal** | "🔥 89% to weekly goal! Don't let the guild down!" |
+
+**The Manipulation**: Players feel a social obligation to phantom strangers who don't exist. Guilt and fear of rejection keep them logging in.
+
+### Guild Tier System
+
+Guild prestige displayed on the panel:
+- 🥉 Bronze → 🥈 Silver → 🥇 Gold → 💎 Platinum → 🏆 Diamond
+
+**Why it works**: Tribal instinct is hardwired. Even knowing these are bots, the social framing triggers real emotional responses — belonging, shame, and competitive drive.
+
+---
+
+## 12. Notification & Engagement Hooks
+
+### Breaking the Streak
+
+Research: "Breaking a streak creates disproportionate psychological discomfort. Players continue games they no longer enjoy simply to maintain login streaks."
+
+**Psychological Principle**: Loss Aversion + Habit Disruption + Anxiety Induction
+
+### In-App Urgency Messages
+
+All notifications are in-app only — no real push notifications are sent.
+
+| Type | Trigger | Message |
+|------|---------|---------|
+| **Streak at Risk** | 20+ hours since last login | "⚠️ Your 12-day streak ends in 4 hours!" |
+| **Crate Nag** | 5+ unopened crates | "📦 You have 5 unopened crates! Claim now!" |
+| **Offline Return** | 30+ min away, 1000+ ore earned | "🏭 Your factories earned 12.5K ore while you were away!" |
+| **Comeback Bonus** | 24+ hours away | "🎉 Welcome back! 3x production for the next hour!" |
+
+### Comeback Bonus (Re-Engagement Hook)
+
+After 24 hours away, a **3x production multiplier** activates for 1 hour:
+- Displayed with animated banner and countdown timer
+- Creates urgency to play *right now* to exploit the bonus
+- Rewards absence, which paradoxically makes returning feel like "winning"
+
+### Fake Social Proof
+
+- **Online player count** ticker: "🟢 1,247 players online now"
+- Count slowly fluctuates ±10 every 30 seconds to feel alive
+- No real players — pure manufactured social presence
+
+**Why it works**: Anxiety about a breaking streak is stronger than pleasure from maintaining it. The comeback bonus exploits the same mechanism: a manufactured reward for returning.
+
+---
+
+## 13. VIP / Whale Mechanics
+
+### Targeting Heavy Spenders
+
+Research on monetization: "Pay-to-win mechanisms and microtransactions target 'whales'—the small percentage of players who generate the majority of revenue. VIP tiers create status hierarchies that drive competitive spending."
+
+**Psychological Principle**: Status Seeking + Pay-to-Win + Competitive Advantage + Sunk Cost
+
+### VIP Level Ladder
+
+10 VIP levels earned through play time, achievements, and ascensions (simulated — no real money):
+
+| Level | Name | Badge | Production Bonus | Unlock |
+|-------|------|-------|-----------------|--------|
+| 1 | Apprentice | 🔰 | +5% | — |
+| 2 | Worker | ⚙️ | +10% | — |
+| 3 | Foreman | 🔧 | +15% | — |
+| 4 | Manager | 📋 | +20% | Exclusive crates |
+| 5 | Director | 🏅 | +30% | — |
+| 6 | Executive | 💼 | +40% | Auto-collect |
+| 7 | VP | 🌟 | +55% | — |
+| 8 | CEO | 👑 | +70% | No ads |
+| 9 | Tycoon | 💎 | +90% | — |
+| 10 | Magnate | 🏆 | +100% | All benefits |
+
+**The Manipulation**: Progress bars toward the next title create constant micro-goals. The gap between VP and CEO is *enormous* — players grind for status symbols.
+
+### Simulated Premium Shop
+
+Items purchasable with **Gems** (earned through play):
+
+| Item | Cost | Tag |
+|------|------|-----|
+| Skip 1 Hour | 20 gems | — |
+| 2x Production (24h) | 150 gems | **BEST VALUE** |
+| Skip 24 Hours | 350 gems | **POPULAR** |
+| Auto-Collector (7d) | 250 gems | **POPULAR** |
+| Legendary Factory Skin | 800 gems | **LIMITED** |
+
+### The "Almost There!" Modal
+
+When a player can't afford an item, instead of a simple error:
+- Full modal appears: **"Almost There!"**
+- Shows exact gem deficit: *"You need 47 more gems"*
+- Lists 3 ways to earn gems faster (keeping them engaged)
+- CTA button: **"Keep Playing →"**
+
+**Why it works**: Framing the shortfall as "almost there" rather than "can't afford" reframes failure as proximity to success — exploiting optimism bias and commitment escalation.
+
+---
+
+## 14. Advanced Near-Miss & Sunk Cost
+
+### The Psychology of Almost
+
+Research (PMID: 7882574): "Near misses elicit responses that mirror those of actual wins. The brain's response to 'almost getting a rare item' is nearly identical to actual wins in terms of dopamine release."
+
+**Psychological Principle**: Near-Miss Effect + Escalating Commitment + Sunk Cost Fallacy
+
+### Near-Miss Scenarios
+
+| Trigger | Chance | Message | Impact |
+|---------|--------|---------|--------|
+| Gacha non-legendary | 15% | "SO CLOSE! The legendary was in the next roll!" | High + 5 pity points |
+| Epic crate open | 30% | "ALMOST LEGENDARY! One tier away!" | Medium |
+| Near prestige record | 100% | "You were SO CLOSE to your record! Reset and try again?" | High |
+| 3 achievements in 1 hour | 50% | "Achievement SPREE! You're on fire! 🔥 Keep going!" | Medium |
+
+### Sunk Cost Investment Tracker
+
+The **Stats tab** displays a real-time accounting of investment:
+
+- **Session Timer** — live `hh:mm:ss` counter showing time spent *this session*
+- **Total Ore Produced** — all-time production counter
+- **Achievements Unlocked** — progress toward all 12 badges
+- **Ascension Level** — permanent prestige counter
+- **Empire Summary** — e.g. *"47h 23m invested · 1.2B ore produced"*
+
+After **5 minutes of play**, a warning banner appears:
+
+> *"You've invested 0+ hours, earned 3 achievements, and built an empire. Don't let it go to waste."*
+
+### Loss Amplifier
+
+Confirmation dialogs (prestige, guild leave) show what the player would lose:
+
+> *"You would lose: 2 ascensions earned, Prestige level 3 reached, 1.2M ore produced"*
+
+**Why it works**: Cataloguing your investment makes quitting feel like destruction. Players don't quit a game — they abandon an identity. Near-misses ensure the next attempt always feels winnable.
+
+---
+
+## 15. Surveillance & Behavioral Profiling
 
 This demonstration includes a **faux telemetry system** that exposes how mobile games collect, analyze, and weaponize user data to maximize addiction and identify "whales" for targeted monetization.
 
@@ -336,27 +502,32 @@ The application will be available at `http://localhost:5173/`
 src/
 ├── components/
 │   ├── buildings/       # Building grid and cards
-│   ├── events/          # ⏰ Time-gated content & FOMO (NEW)
-│   │   └── TimedEventBanner.tsx  # Rush hour, flash sale banners
+│   ├── events/          # ⏰ Time-gated content & FOMO
+│   │   └── TimedEventBanner.tsx
 │   ├── gacha/           # 🎰 Gacha/collection system
 │   │   ├── GachaScreen.tsx
 │   │   └── CollectionAlbum.tsx
-│   ├── notifications/   # Achievement popups, offline modal
+│   ├── guild/           # 👥 Social/guild system
+│   │   └── GuildPanel.tsx
+│   ├── notifications/   # 🔔 In-app alerts & comeback bonus
+│   │   └── NotificationCenter.tsx
 │   ├── prestige/        # 🔄 Reset/ascension system
 │   │   ├── PrestigePanel.tsx
 │   │   └── AscensionShop.tsx
 │   ├── resources/       # Resource bar with tap button
 │   ├── rewards/         # Loot crates, daily rewards, leaderboard
-│   └── telemetry/       # 📊 Faux surveillance system
-│       ├── events.ts
-│       ├── TelemetryLogger.ts
-│       └── PlayerScorer.ts
+│   ├── sunkCost/        # 💸 Investment tracker & near-miss
+│   │   └── SunkCostDisplay.tsx
+│   ├── telemetry/       # 📊 Faux surveillance system
+│   └── vip/             # 👑 VIP status & premium shop
+│       ├── VIPStatusBar.tsx
+│       └── PremiumShop.tsx
 ├── hooks/               # Game tick and interval management
-├── stores/              # Zustand stores (game, rewards, player, prestige, collection)
-└── types/               # TypeScript interfaces & calculations
-    ├── collection.ts      # Gacha/collectible types
-    ├── gacha.ts           # Pity system & gacha mechanics
-    └── prestige.ts        # Ascension system types
+├── stores/              # Zustand stores (11 stores total)
+└── types/               # TypeScript interfaces & utilities
+    ├── collection.ts    ├── gacha.ts        ├── guild.ts
+    ├── nearMiss.ts      ├── notifications.ts├── prestige.ts
+    ├── timedEvents.ts   └── vip.ts
 ```
 
 ---
